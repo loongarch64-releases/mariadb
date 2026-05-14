@@ -1,0 +1,13 @@
+FROM lcr.loongnix.cn/library/debian:forky
+
+RUN apt-get update && apt-get install -y \
+    ca-certificates git lsb-release devscripts debhelper eatmydata \
+    dh-exec dh-package-notes cracklib-runtime default-jdk gdb \
+    libaio-dev libboost-dev libbz2-dev libcrack2-dev libcurl4-openssl-dev \
+    libedit-dev libfmt-dev libjemalloc-dev libjudy-dev libkrb5-dev \
+    liblz4-dev liblzma-dev liblzo2-dev libnuma-dev libpam0g-dev \
+    libpcre2-dev libsnappy-dev libssl-dev libsystemd-dev liburing-dev \
+    libxml2-dev libzstd-dev unixodbc-dev uuid-dev bison cmake \
+    && rm -rf /var/lib/apt/lists/*
+
+CMD ["/bin/bash"]
